@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: education-allocator
+  labels:
+    app: education-allocator 
+spec:
+  replicas: 1
+  selector:
+    name: education-allocator 
+  template:
+    metadata:
+      labels:
+        name: education-allocator 
+    spec:
+      containers:
+      - name: education-allocator 
+        image: docker.io/fluxcapacitor/education-allocator:master
+        imagePullPolicy: "Always"
+        env:
+        ports:
+        - containerPort: 5070 
