@@ -1,3 +1,0 @@
-#!/bin/bash
-
-kubectl annotate svc education-allocator dns.alpha.kubernetes.io/external=allocator.demo.pipeline.io --overwrite
